@@ -1,8 +1,8 @@
 import React from 'react';
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
     titleValue: string,
-    collapsed: boolean
+    collapsed?: boolean
 }
 
 function Accordion(props: AccordionPropsType) {
