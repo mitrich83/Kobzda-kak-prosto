@@ -5,7 +5,7 @@ type RatingPropsType = {
 
 }
 
-export function UnconrolledRating (props: RatingPropsType) {
+export function UncontrolledRating (props: RatingPropsType) {
 
     let [value, setValue] = useState(0)
 
@@ -25,11 +25,10 @@ type StarPropsType = {
 }
 
 function Star(props: StarPropsType) {
-    console.log('Star rendering')
 
     if (props.selected === true) {
-        return <span><b>star </b></span>
+        return <img width={'20px'} height={'20px'} src="https://image.pngaaa.com/870/50870-middle.png" />
     } else {
-        return <span>star </span>
+        return <img width={'20px'} height={'20px'} src="https://png.pngtree.com/png-vector/20190411/ourmid/pngtree-vector-star-icon-png-image_926157.jpg" />
     }
 }
