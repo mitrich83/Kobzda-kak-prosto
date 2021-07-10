@@ -33,7 +33,7 @@ function App() {
             Article 5
             <OnOff on={switchOn} onChange={ (on)=> {setSwitchOn(on)}}/>
             Article 6
-            <UncontrolledOnOff/>
+            <UncontrolledOnOff onChange={setSwitchOn} /> {switchOn.toString()}
 
         </div>
     );
