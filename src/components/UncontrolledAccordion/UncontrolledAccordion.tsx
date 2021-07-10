@@ -14,7 +14,7 @@ function UncontrolledAccordion (props: AccordionPropsType) {
 
 
 type AccordionTitlePropsType = {
-    title: string
+    title: string|undefined
     onClick: () => void
 }
 
