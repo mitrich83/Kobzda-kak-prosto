@@ -1,34 +1,41 @@
 import React, {useState} from 'react';
+import {RatingValueType} from '../Rating/Rating';
 
-type RatingPropsType = {
-    value?: 0 | 1 | 2 | 3 | 4 | 5
+// type RatingPropsType = StarPropsType & {
+//     value?: RatingValueType
+//     setValue: (value: RatingValueType ) => void
+// }
 
-}
-
-export function UncontrolledRating (props: RatingPropsType) {
-
-    let [value, setValue] = useState(0)
+export function UncontrolledRating() {
+    let [value, setValue] = useState(3)
 
     return (
         <div>
-            <Star selected={value > 0}/><button onClick={ ()=> {setValue(1)}}>1</button>
-            <Star selected={value > 1}/><button onClick={ ()=> {setValue(2)}}>2</button>
-            <Star selected={value > 2}/><button onClick={ ()=> {setValue(3)}}>3</button>
-            <Star selected={value > 3}/><button onClick={ ()=> {setValue(5)}}>4</button>
-            <Star selected={value > 4}/><button onClick={ ()=> {setValue(5)}}>5</button>
+            <Star selected={value > 0} setValue={() => setValue(1)} value={1} />
+            <Star selected={value > 1} setValue={() => setValue(2)} value={2} />
+            <Star selected={value > 2} setValue={() => setValue(3)} value={3} />
+            <Star selected={value > 3} setValue={() => setValue(4)} value={4} />
+            <Star selected={value > 4} setValue={() => setValue(5)} value={5} />
         </div>
     )
 }
 
+export type RType = 1 | 2 | 3 | 4 | 5
+
 type StarPropsType = {
     selected: boolean
+    setValue: (value: RType ) => void
+    // value: RatingValueType
+    value: RType
 }
 
-function Star(props: StarPropsType) {
-
-    if (props.selected === true) {
-        return <img width={'20px'} height={'20px'} src="https://image.pngaaa.com/870/50870-middle.png" />
-    } else {
-        return <img width={'20px'} height={'20px'} src="https://png.pngtree.com/png-vector/20190411/ourmid/pngtree-vector-star-icon-png-image_926157.jpg" />
-    }
+function Star(props: StarPropsType ) {
+        return (
+            <span
+                onClick={ ()=> {
+                props.setValue(props.value)}}
+            >
+                {props.selected ? <b> star </b> : ' star '}
+            </span>
+        )
 }
