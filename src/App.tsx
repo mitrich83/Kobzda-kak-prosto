@@ -6,29 +6,34 @@ import {Rating, RatingValueType} from './components/Rating/Rating';
 import {Accordion, AccordionBody} from './components/Accordion/Accordion';
 import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
 import {OnOff} from './components/OnOff/OnOff';
-
+import {
+    GetValueOfUncontrolledInput,
+    TrackValueOfUncontrolledInput
+} from './components/UncontrolledInput/UncontrolledInput';
 
 
 function App() {
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
-    let [switchOn, setSwitchOn ] = useState<boolean>(false)
+    let [switchOn, setSwitchOn] = useState<boolean>(false)
 
     return (
         <div className={'App'}>
             <PageTitle title={'This is APP component'}/>
             <PageTitle title={'My friends'}/>
-            Article 1
+  {/*          Article 1
             <Rating value={ratingValue} onClick={setRatingValue}/>
             Article 2
-            {/*<UncontrolledRating/>*/}
+            <UncontrolledRating/>
             Article 3
             <UncontrolledAccordion titleValue={'Menu'}/>
             Article 4
             <Accordion titleValue={'Users'}
                        collapsed={accordionCollapsed}
-                       onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}
+                       onChange={() => {
+                           setAccordionCollapsed(!accordionCollapsed)
+                       }}
                        onClick={(value) => {
                            alert(`user with to ${value} should be happy`)
                        }}
@@ -39,14 +44,16 @@ function App() {
                            {title: 'Viktor', value: 4,}
                        ]}
             />
-
-
-{/*
             Article 5
-            <OnOff on={switchOn} onChange={ (on)=> {setSwitchOn(on)}}/>
+            <OnOff on={switchOn} onChange={(on) => {
+                setSwitchOn(on)
+            }}/>
             Article 6
-            <UncontrolledOnOff onChange={setSwitchOn} /> {switchOn.toString()}
-*/}
+            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
+            Article 7
+            <TrackValueOfUncontrolledInput/>
+            <GetValueOfUncontrolledInput/>
+
 
         </div>
     );
