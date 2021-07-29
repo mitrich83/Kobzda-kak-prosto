@@ -10,6 +10,9 @@ import {
     GetValueOfUncontrolledInput,
     TrackValueOfUncontrolledInput
 } from './components/UncontrolledInput/UncontrolledInput';
+import { ControlledInput} from './components/ControlledInput/ControlledInput';
+import {ControlledSelect} from './components/ControlledSelect/ControlledSelect';
+import {ControlledCheckBox} from './components/ControlledCheckBox/ControlledCheckBox';
 
 
 function App() {
@@ -22,7 +25,7 @@ function App() {
         <div className={'App'}>
             <PageTitle title={'This is APP component'}/>
             <PageTitle title={'My friends'}/>
-  {/*          Article 1
+            {/*          Article 1
             <Rating value={ratingValue} onClick={setRatingValue}/>
             Article 2
             <UncontrolledRating/>
@@ -54,6 +57,10 @@ function App() {
             <TrackValueOfUncontrolledInput/>
             <GetValueOfUncontrolledInput/>
 
+            <div>Article 8</div>
+            <ControlledInput/>
+            <ControlledSelect/>
+            <ControlledCheckBox/>
 
         </div>
     );
