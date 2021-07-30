@@ -1,21 +1,41 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {useState} from 'react';
+import s from './ControlledSelect.module.css';
 
-export const ControlledSelect = () => {
-    const [select, setSelect] = useState('2')
+type OptionsType = {
+    id: number
+    option: string
+}
 
-    const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-        const currentSelect = e.currentTarget.value
-        setSelect(currentSelect)
-    }
+type ControlledSelectpropsType = {
+    value: any
+    items: OptionsType[]
+    onChange:(value:any)=> void
+}
+
+export const ControlledSelect = (props:ControlledSelectpropsType) => {
+
+    const [active, setActive] = useState(true)
+    const selectedItem = props.items.find(i => i.id === props.value)
+
+
+
+    const onToogleItem = ()=> {setActive(!active)}
+
     return (
-        <div>
-            <select value={select} onChange={onChangeHandler}>
-                <option value={'1'}>Moscow</option>
-                <option value={'2'}>Minsk</option>
-                <option value={'3'}>Kiev</option>
-            </select>
-        </div>
+        <>
+            <div className={s.select}>
+                <span className={s.main} onClick={onToogleItem}>{selectedItem && selectedItem.option}</span>
+                {
+                    active &&
+                <div className={s.items}>
+                    {props.items.map(i => <div
+                        key={i.id}
+                        onClick={()=> props.onChange}
+                    >{i.option}</div>)}
+                </div>
+                }
+            </div>
+        </>
     )
 
 }
-

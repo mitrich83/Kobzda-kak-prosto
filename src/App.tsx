@@ -10,9 +10,10 @@ import {
     GetValueOfUncontrolledInput,
     TrackValueOfUncontrolledInput
 } from './components/UncontrolledInput/UncontrolledInput';
-import { ControlledInput} from './components/ControlledInput/ControlledInput';
+import {ControlledInput} from './components/ControlledInput/ControlledInput';
 import {ControlledSelect} from './components/ControlledSelect/ControlledSelect';
 import {ControlledCheckBox} from './components/ControlledCheckBox/ControlledCheckBox';
+import {log} from 'util';
 
 
 function App() {
@@ -20,47 +21,62 @@ function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
+    const onClickCallback = () => {
+        console.log('some item clicked')
+    }
+    const [value, setValue] = useState(null)
 
     return (
         <div className={'App'}>
             <PageTitle title={'This is APP component'}/>
             <PageTitle title={'My friends'}/>
-            {/*          Article 1
+{/*            Article 1
+
             <Rating value={ratingValue} onClick={setRatingValue}/>
             Article 2
-            <UncontrolledRating/>
+            <UncontrolledRating/>*/}
             Article 3
             <UncontrolledAccordion titleValue={'Menu'}/>
+{/*
             Article 4
             <Accordion titleValue={'Users'}
                        collapsed={accordionCollapsed}
                        onChange={() => {
                            setAccordionCollapsed(!accordionCollapsed)
                        }}
-                       onClick={(value) => {
-                           alert(`user with to ${value} should be happy`)
-                       }}
                        items={[
-                           {title: 'Dimych', value: 1,},
-                           {title: 'Valera', value: 2,},
-                           {title: 'Artem', value: 3,},
-                           {title: 'Viktor', value: 4,}
+                           {title: 'Dimych', value: 1},
+                           {title: 'Valera', value: 2},
+                           {title: 'Artem', value: 3},
+                           {title: 'Viktor', value: 4}
                        ]}
+                       onClickItem={onClickCallback}
             />
+
             Article 5
             <OnOff on={switchOn} onChange={(on) => {
                 setSwitchOn(on)
             }}/>
             Article 6
-            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
+            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
             Article 7
             <TrackValueOfUncontrolledInput/>
             <GetValueOfUncontrolledInput/>
 
             <div>Article 8</div>
             <ControlledInput/>
-            <ControlledSelect/>
+   <ControlledSelect value={null}
+                        items={[
+                            {id: 1, option: 'Moscow'},
+                            {id: 2, option: 'Minsk'},
+                            {id: 3, option: 'Kiev'},
+                            {id: 4, option: 'Pushkino'}
+                        ]}
+                        onChange={setValue}
+        />
             <ControlledCheckBox/>
+*/}
+
 
         </div>
     );
