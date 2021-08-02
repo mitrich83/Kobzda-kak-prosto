@@ -14,6 +14,7 @@ import {ControlledInput} from './components/ControlledInput/ControlledInput';
 import {ControlledSelect} from './components/ControlledSelect/ControlledSelect';
 import {ControlledCheckBox} from './components/ControlledCheckBox/ControlledCheckBox';
 import {log} from 'util';
+import {Example} from './components/ReactMemo/ReactMemo';
 
 
 function App() {
@@ -77,7 +78,7 @@ function App() {
             <ControlledCheckBox/>
 */}
 
-
+<Example/>
         </div>
     );
 }

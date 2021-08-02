@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useState} from 'react';
 
 
-export const ControlledInput = () => {
+export const ControlledInput = React.memo(() => {
     const [value, setValue] = useState('')
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -14,4 +14,4 @@ export const ControlledInput = () => {
         </div>
     )
 
-}
+})

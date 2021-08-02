@@ -15,7 +15,7 @@ export type AccordionPropsType = {
 
 }
 
-export const Accordion = (props: AccordionPropsType) => {
+export const Accordion = React.memo((props: AccordionPropsType) => {
     return (
         <div>
             <AccordionTitle title={props.titleValue}
@@ -24,7 +24,7 @@ export const Accordion = (props: AccordionPropsType) => {
             {!props.collapsed && <AccordionBody items={props.items} onClickItem={props.onClickItem}/>}
         </div>
     )
-}
+})
 
 type AccordionTitlePropsType = {
     title: string

@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useState} from 'react';
 
-export const ControlledCheckBox = () => {
+export const ControlledCheckBox = React.memo(() => {
     const [select, setSelect] = useState(false)
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -13,4 +13,4 @@ export const ControlledCheckBox = () => {
         </div>
     )
 
-}
+})

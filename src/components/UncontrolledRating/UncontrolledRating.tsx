@@ -4,7 +4,7 @@ import {Star} from '../Rating/Star/Star'
 export type RType = 0 | 1 | 2 | 3 | 4 | 5
 
 
-export function UncontrolledRating() {
+export const UncontrolledRating = React.memo(()=> {
 
     let [value, setValue] = useState<RType>(0)
 
@@ -38,4 +38,4 @@ export function UncontrolledRating() {
                   }}/>
         </div>
     )
-}
+})

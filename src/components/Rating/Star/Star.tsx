@@ -7,7 +7,7 @@ type StarPropsType = {
     value: RType
 }
 
-export function Star (props: StarPropsType) {
+export const Star = React.memo((props: StarPropsType)=> {
 
     const fill= <img height={20} width={20}  src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Full_Star_Yellow.svg/1200px-Full_Star_Yellow.svg.png'/>
 
@@ -18,4 +18,4 @@ export function Star (props: StarPropsType) {
                {props.selected ? fill : unFill}
         </span>
     )
-}
+})

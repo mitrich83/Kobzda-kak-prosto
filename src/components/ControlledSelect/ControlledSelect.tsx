@@ -12,7 +12,7 @@ type ControlledSelectpropsType = {
     onChange:(value:any)=> void
 }
 
-export const ControlledSelect = (props:ControlledSelectpropsType) => {
+export const ControlledSelect = React.memo((props:ControlledSelectpropsType) => {
 
     const [active, setActive] = useState(true)
     const selectedItem = props.items.find(i => i.id === props.value)
@@ -38,4 +38,4 @@ export const ControlledSelect = (props:ControlledSelectpropsType) => {
         </>
     )
 
-}
+})

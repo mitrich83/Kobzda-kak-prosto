@@ -20,5 +20,4 @@ export const reducer = (state: StateType, action: ActionType):StateType => {
     }
     return state
 
-
 }
