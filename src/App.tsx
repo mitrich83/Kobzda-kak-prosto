@@ -14,7 +14,8 @@ import {ControlledInput} from './components/ControlledInput/ControlledInput';
 import {ControlledSelect} from './components/ControlledSelect/ControlledSelect';
 import {ControlledCheckBox} from './components/ControlledCheckBox/ControlledCheckBox';
 import {log} from 'util';
-import {Example} from './components/ReactMemo/ReactMemo';
+import {DifficultCountExampleUseMemo, HelpsToReactMemo} from './components/useMemo/useMemo';
+import {ExampleReactmemo} from './components/ReactMemo/ReactMemo';
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
             Article 2
             <UncontrolledRating/>*/}
             Article 3
-            <UncontrolledAccordion titleValue={'Menu'}/>
+            {/*<UncontrolledAccordion titleValue={'Menu'}/>*/}
 {/*
             Article 4
             <Accordion titleValue={'Users'}
@@ -77,8 +78,12 @@ function App() {
         />
             <ControlledCheckBox/>
 */}
-
-<Example/>
+            <div>Article 9</div>
+            <ExampleReactmemo/>
+            <div>Article 10</div>
+            <DifficultCountExampleUseMemo/>
+            <div>Article 11</div>
+            <HelpsToReactMemo/>
         </div>
     );
 }
