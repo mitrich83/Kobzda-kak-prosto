@@ -16,6 +16,7 @@ import {ControlledCheckBox} from './components/ControlledCheckBox/ControlledChec
 import {log} from 'util';
 import {DifficultCountExampleUseMemo, HelpsToReactMemo} from './components/useMemo/useMemo';
 import {ExampleReactmemo} from './components/ReactMemo/ReactMemo';
+import {Timer} from './components/Timer';
 
 
 function App() {
@@ -78,12 +79,14 @@ function App() {
         />
             <ControlledCheckBox/>
 */}
-            <div>Article 9</div>
+         {/*   <div>Article 9</div>
             <ExampleReactmemo/>
             <div>Article 10</div>
             <DifficultCountExampleUseMemo/>
             <div>Article 11</div>
-            <HelpsToReactMemo/>
+            <HelpsToReactMemo/>*/}
+            <div>Article 12</div>
+            <Timer/>
         </div>
     );
 }

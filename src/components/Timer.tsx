@@ -1,25 +1,22 @@
 import React, {useEffect, useState} from 'react';
 
 
-export const ExampleSetTimeOut = () => {
+export const Timer = () => {
 
-    const [counter, setCounter] = useState(0)
+    const [time, setTime] = useState(0)
 
+    let timer = new Date()
 
     useEffect(() => {
-        console.log('useEffect every render')
 
         setInterval(() => {
-            setCounter(counter + 1)
-
-            /*        setTimeout(()=> {
-                document.title = counter.toString()
-                }, 1000)
-                }, [counter]*/
+            setTime(seconds => seconds + 1)
         }, 1000)
-    }, [])
+    }, [setTime])
 
-    return
+    return(
     <>
+        {timer.getHours()}:{timer.getMinutes()}:{time}
     </>
+    )
 }
