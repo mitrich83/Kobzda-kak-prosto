@@ -15,12 +15,12 @@ export const Clock = () => {
     const getTwoNumbers = (num: number) => num < 10 ? '0' + num : num
 
     const secondsString = getTwoNumbers(date.getSeconds())
-    const minutssString = getTwoNumbers(date.getMinutes())
+    const minutesString = getTwoNumbers(date.getMinutes())
     const hoursString = getTwoNumbers(date.getHours())
 
     return <div>
         <span>{hoursString}</span>:
-        <span>{minutssString}</span>:
+        <span>{minutesString}</span>:
         <span>{secondsString}</span>
     </div>
 }
