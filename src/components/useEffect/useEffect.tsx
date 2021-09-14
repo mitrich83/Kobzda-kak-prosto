@@ -3,9 +3,9 @@ import React, {useEffect, useState} from 'react';
 
 export const ExampleUseEffect = () => {
 
-     const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(0)
 
-    useEffect(()=> {
+    useEffect(() => {
         // все сайд эффекты, всю грязь, можно делать в useEffect, все асинронные запросы
         // api.getUsers().then('') - запросы на сервер
         // setInterval
@@ -14,20 +14,23 @@ export const ExampleUseEffect = () => {
         // document.title = 'User'
     })
 
-    useEffect(()=> {
+    useEffect(() => {
         console.log('useEffect every render')
     })
 
-    useEffect(()=> {
+    useEffect(() => {
         console.log('useEffect only first render same as (componentDidMount)')
-    },[])
+    }, [])
 
-    useEffect(()=> {
+    useEffect(() => {
         console.log('useEffect first render and every counter changed')
-    },[counter])
+    }, [counter])
 
+
+
+    const increase = () => { setCounter(counter + 1) }
     return <>
-        <button onClick={() => setCounter(counter+1)}>+</button>
+        <button onClick={() => (increase)}>+</button>
         {counter}
     </>
 }

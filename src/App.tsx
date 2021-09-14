@@ -17,6 +17,8 @@ import {log} from 'util';
 import {DifficultCountExampleUseMemo, HelpsToReactMemo} from './components/useMemo/useMemo';
 import {ExampleReactmemo} from './components/ReactMemo/ReactMemo';
 import {Clock} from './components/clock/Clock';
+import {ExampleUseEffect} from './components/useEffect/useEffect';
+import {KeyTracker} from './components/useEffect/KeyTracker';
 
 
 function App() {
@@ -38,7 +40,7 @@ function App() {
             <Rating value={ratingValue} onClick={setRatingValue}/>
             Article 2
             <UncontrolledRating/>*/}
-            Article 3
+            {/*Article 3*/}
             {/*<UncontrolledAccordion titleValue={'Menu'}/>*/}
 {/*
             Article 4
@@ -85,9 +87,12 @@ function App() {
             <DifficultCountExampleUseMemo/>
             <div>Article 11</div>
             <HelpsToReactMemo/>*/}
-            <div>Article 12</div>
-            <Clock mode={'digital'}/>
-            <Clock mode={'analog'}/>
+            {/*<div>Article 12</div>*/}
+            {/*<Clock mode={'digital'}/>*/}
+            {/*<Clock mode={'analog'}/>*/}
+            {/*<ExampleUseEffect/>*/}
+            {/*<ResetUseEffect/>*/}
+            <KeyTracker/>
         </div>
     );
 }
