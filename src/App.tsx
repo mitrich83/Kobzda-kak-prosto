@@ -86,8 +86,8 @@ function App() {
             <div>Article 11</div>
             <HelpsToReactMemo/>*/}
             <div>Article 12</div>
-            <Clock mode={'analog'}/>
             <Clock mode={'digital'}/>
+            <Clock mode={'analog'}/>
         </div>
     );
 }

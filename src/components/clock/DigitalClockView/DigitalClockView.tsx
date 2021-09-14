@@ -7,6 +7,6 @@ export const DigitalClockView: React.FC<ClockViewPropsType> = ({date} )=>  {
     return <>
         <span>{getTwoNumbers(date.getHours())}</span>:
         <span>{getTwoNumbers(date.getMinutes())}</span>:
-        <span>{getTwoNumbers(date.getHours())}</span>
+        <span>{getTwoNumbers(date.getSeconds())}</span>
     </>
 }

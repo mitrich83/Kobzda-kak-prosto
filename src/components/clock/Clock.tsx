@@ -15,10 +15,11 @@ export const Clock: React.FC<ClockPropsType> = (props) => {
 
     useEffect(() => {
         const intervalID = setInterval(() => {
+            console.log('tick')
             setDate(new Date())
         }, 1000)
         return () => {
-            // clearInterval(intervalID)
+            clearInterval(intervalID)
         }
     }, [])
 
@@ -32,7 +33,7 @@ export const Clock: React.FC<ClockPropsType> = (props) => {
             view = <DigitalClockView date={date}/>
     }
 
-    return <div>
+    return <div className={'position-clock'}>
         {view}
     </div>
 }
